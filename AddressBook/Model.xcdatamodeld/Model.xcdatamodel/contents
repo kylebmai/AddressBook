@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F45" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AddressBook" representedClassName="AddressBook" syncable="YES">
+        <attribute name="emailAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photoURL" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="location" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Location" inverseName="addressBook" inverseEntity="Location" syncable="YES"/>
+    </entity>
+    <entity name="Location" representedClassName="Location" syncable="YES">
+        <attribute name="cityAndZip" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="streetAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="typeAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="addressBook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AddressBook" inverseName="location" inverseEntity="AddressBook" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AddressBook" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Location" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>
